@@ -1,0 +1,236 @@
+Atos Terraform Workshop
+Atos Internal Terraform Training
+8 Jul 2019
+
+Ahmet Erkoc
+Senior System Engineer, Atos
+ahmet.erkoc@atos.net
+aerkoc01@gmail
+https://aerkoc.com
+@ahmeterkoc01
+AKA sly01
+* What this training is:
+
+Why Terraform ?
+
+Iterative hands on
+
+Usage of Terraform
+
+* What this training is not:
+
+AWS Training *!*
+
+Detailed Terraform Reference
+
+* I can learn it on my own
+
+.link https://www.terraformupandrunning.com/ Read this book
+
+.link https://blog.gruntwork.io/an-introduction-to-terraform-f17df9c6d180 Read this medium post
+
+.link https://terraform.io Refer this site
+
+* Why attend this session?
+
+No one goes from a messed up working setup to a clean working setup
+
+We will do that
+
+* Why Terraform?
+
+Short answer - it is useful, battle tested and has a strong community
+
+* Why manual infra creation is a bad idea?
+
+Manual -> Error prone
+
+Parity loss between dev, stage, prod
+
+*Boring!*
+
+: It does only automate ? Nope, it is also manual of your system
+
+* There has to be a better way
+
+aws cli shell scripts?
+
+For python users *boto*
+
+For ruby users *fog*
+
+* Advantages of homegrown scripts
+
+Customized for your product
+
+You wrote it - you know all about it
+
+: Customized for your product could be either advantange or disadvantage
+
+* Disadvantages of homegrown scripts Customized for your product
+
+You wrote it *only* you know all about it
+
+Need a central box to manage
+
+State information?
+
+Audit trail?
+
+Is this what you are supposed to do?
+
+New product == new infra scripts?
+
+* We need a tool that...
+
+Helps automate infra creation
+
+Can be used by multiple users
+
+Promotes reusability
+
+Is not our headache to maintain
+
+* Enter Terraform
+
+.image images/terraform-image1.png 200 400
+
+Infrastructure as code
+
+Ease of learning curve + active community
+
+Support for multiple cloud vendors
+
+State management
+
+Modules!
+
+* Comparison with Cloudformation
+
+1. Biggest advantage of TF over CF - TF is cloud vendor agnostic
+
+2. CF verbosity > TF
+
+3. CF community < TF
+
+4. CF learning curve =~ TF
+
+5. Other alternatives:
+
+.link https://docs.ansible.com/ansible/latest/modules/list_of_cloud_modules.html Ansible cloud modules
+
+.link https://www.sparkleformation.io/ SparkleFormation
+
+Azure Resource Manager, Google Cloud Deployment Manager
+
+Ansible, Chef, Puppet, SaltStack, etc .. ?
+
+: Configuration management vs orchestration
+: Think of ansible and terrafrom as an ochestra of musicians.  The conductor ensures the right number of instruments are there and that all of them are playing correctly. If there is an issue, an orchestration tool will generally remove the misbehaving instrument and replace it with another. Orchestration tools are usually focused on the end result and help to ensure the environment is always in that “state”. 
+: Terraform is like this. Terraform will store the state of the environment, and if anything is out of order or missing, it will automatically provide that resource when it is run again. This is fantastic for environments that require a very steady state. If something goes wrong, another “Terraform Apply” will rectify the issue! On the other hand, a configuration management tool is more like an instrument repair person. The configuration management tool, such as Ansible, will configure each instrument to ensure it is on key, free of damage, and is working properly. If there is a problem with an instrument, the CM tool will work to repair the issue rather than just replace the instrument entirely.
+: Do keep in mind that Ansible is somewhat of a hybrid in this aspect and able to replace infrastructure and perform orchestration tasks as well, but Terraform is generally regarded as a superior product in this respect due to its more advanced state management capabilities.
+
+* Choose your editor
+
+.link https://atom.io/packages/language-terraform} Atom syntax support
+
+.link https://atom.io/packages/linter-terraform-syntax Atom linting support
+
+.link https://github.com/hashivim/vim-terraform Vim syntax support
+
+.link https://github.com/juliosueiras/vim-terraform-completion Vim syntax support
+
+Choose your weapon - *syntax* + basic *linting* (demo)
+
+Use "_terraform_ _validate_" and "_terraform_ _fmt_" otherwise:
+
+* Setup on Cloud9 AWS
+
+.image images/demo.png
+
+* Assignment 1
+
+Just take a look
+
+.play scripts/create.go
+
+.play scripts/delete.go
+
+* Assigment 2
+
+One file to rule them all - main.tf
+
+Good: works
+
+Bad: Hard to maintain
+
+* Assignment 3
+
+Split main.tf
+
+Good: Easier to read
+
+Bad: Does not handle different environments
+
+Worth mentioning:
+
+.link https://www.terraform.io/docs/state/workspaces.html terraform-workspaces
+
+: For example, a developer working on a complex set of infrastructure changes might create a new temporary workspace in order to freely experiment with changes without affecting the default workspace.
+: Non-default workspaces are often related to feature branches in version control. The default workspace might correspond to the "master" or "trunk" branch, which describes the intended state of production infrastructure.
+
+* Assigment 4
+
+Split same code across multiple environments
+
+Good: works
+
+Bad: Repetition of code - only env var different
+
+: We will improve this code base using terraform workspace and map type variable, but before going that one let's have a look variables management a bit closer
+
+* Assigment 4.5
+
+Let's take a look how variables management in terraform
+
+Variables could be stored in files
+
+- Not good in terms of security
+Variables could be stored in environment
+
+- Again not good in terms of security
+
+Variables could be given as parameter, generally exported from somewhere else like jenkins, vault, etc...
+
+: TF_VAR_name
+: https://www.terraform.io/docs/commands/environment-variables.html
+
+* Assigment 5
+
+tfvars to abstract out common code
+
+Good: works
+
+Bad: same as previous case but now both dev and prod exactly the same
+
+: DRY principle was broken here
+
+* Assigment 6
+
+local module
+
+Good: works
+
+Bad: Infra and module tightly coupled
+
+* Assigment 7
+
+remote module
+
+Good: decoupling, versioning
+
+Bad: Long terraform commands to document
+
+* Reference
+
+.link http://saurabh-hirani.github.io/writing/2018/08/01/terraform-workshop Terraform-workshop Saurabh Hirani
