@@ -223,13 +223,30 @@ Good: works
 
 Bad: Infra and module tightly coupled
 
+* Assigment 6.5
+
+*Preliminary* for Assigment 7
+
+remote module
+
+.link https://www.terraform.io/docs/modules/sources.html#github Module Sources
+
+Good: decoupling, versioning
+
+Bad: Long terraform commands to document (in *assigment7*)
+
+
 * Assigment 7
 
 remote module
 
+.link https://www.terraform.io/docs/modules/sources.html#github Module Sources
+
 Good: decoupling, versioning
 
 Bad: Long terraform commands to document
+
+: terraform-docs to generate - terraform-docs markdown <module-name>
 
 * Reference
 
