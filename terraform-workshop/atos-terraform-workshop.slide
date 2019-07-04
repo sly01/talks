@@ -140,6 +140,8 @@ Ansible, Chef, Puppet, SaltStack, etc .. ?
 
 .link https://github.com/juliosueiras/vim-terraform-completion Vim syntax support
 
+.link https://github.com/juliosueiras/vim-terraform-completion my favorite(NeoVim terraform completion with linter)
+
 Choose your weapon - *syntax* + basic *linting* (demo)
 
 Use "_terraform_ _validate_" and "_terraform_ _fmt_" otherwise:
@@ -163,6 +165,11 @@ One file to rule them all - main.tf
 Good: works
 
 Bad: Hard to maintain
+
+: How to get syntax ?
+: https://www.terraform.io/docs/providers/aws/index.html
+: https://github.com/dtan4/terraforming  terraforming ec2
+: terraform graph | dot -Tpng > graph.png
 
 * Assignment 3
 
@@ -205,6 +212,8 @@ Variables could be given as parameter, generally exported from somewhere else li
 : TF_VAR_name
 : https://www.terraform.io/docs/commands/environment-variables.html
 
+: terrraform show
+
 * Assigment 5
 
 tfvars to abstract out common code
@@ -245,6 +254,10 @@ remote module
 Good: decoupling, versioning
 
 Bad: Long terraform commands to document
+
+Tips:
+
+.link https://github.com/segmentio/terraform-docs terraform-docs
 
 : terraform-docs to generate - terraform-docs markdown <module-name>
 
