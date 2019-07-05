@@ -150,6 +150,10 @@ Use "_terraform_ _validate_" and "_terraform_ _fmt_" otherwise:
 
 .image images/demo.png
 
+* Assignments Code Repo
+
+.link https://github.com/sly01/terraform-workspace You can clone repo from here
+
 * Assignment 1
 
 Just take a look
