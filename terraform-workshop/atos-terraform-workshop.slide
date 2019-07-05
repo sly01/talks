@@ -212,7 +212,9 @@ Variables could be given as parameter, generally exported from somewhere else li
 : TF_VAR_name
 : https://www.terraform.io/docs/commands/environment-variables.html
 
-: terrraform show
+: terraform show
+
+: Interpolation syntax https://www.terraform.io/docs/configuration-0-11/interpolation.html
 
 * Assigment 5
 
