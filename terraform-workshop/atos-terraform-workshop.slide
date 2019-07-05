@@ -162,9 +162,9 @@ Just take a look
 
 One file to rule them all - main.tf
 
-Good: works
+*Good:* works
 
-Bad: Hard to maintain
+*Bad:* Hard to maintain
 
 : How to get syntax ?
 : https://www.terraform.io/docs/providers/aws/index.html
@@ -175,9 +175,9 @@ Bad: Hard to maintain
 
 Split main.tf
 
-Good: Easier to read
+*Good:* Easier to read
 
-Bad: Does not handle different environments
+*Bad:* Does not handle different environments
 
 Worth mentioning:
 
@@ -190,9 +190,9 @@ Worth mentioning:
 
 Split same code across multiple environments
 
-Good: works
+*Good:* works
 
-Bad: Repetition of code - only env var different
+*Bad:* Repetition of code - only env var different
 
 : We will improve this code base using terraform workspace and map type variable, but before going that one let's have a look variables management a bit closer
 
@@ -220,9 +220,9 @@ Variables could be given as parameter, generally exported from somewhere else li
 
 tfvars to abstract out common code
 
-Good: works
+*Good:* works
 
-Bad: same as previous case but now both dev and prod exactly the same
+*Bad:* same as previous case but now both dev and prod exactly the same
 
 : DRY principle was broken here
 
@@ -230,9 +230,9 @@ Bad: same as previous case but now both dev and prod exactly the same
 
 local module
 
-Good: works
+*Good:* works
 
-Bad: Infra and module tightly coupled
+*Bad:* Infra and module tightly coupled
 
 * Assignment 6.5
 
@@ -242,9 +242,9 @@ remote module
 
 .link https://www.terraform.io/docs/modules/sources.html#github Module Sources
 
-Good: decoupling, versioning
+*Good:* decoupling, versioning
 
-Bad: Long terraform commands to document (in *assigment7*)
+*Bad:* Long terraform commands to document (in *assigment7*)
 
 
 * Assignment 7
@@ -253,9 +253,9 @@ remote module
 
 .link https://www.terraform.io/docs/modules/sources.html#github Module Sources
 
-Good: decoupling, versioning
+*Good:* decoupling, versioning
 
-Bad: Long terraform commands to document
+*Bad:* Long terraform commands to document
 
 Tips:
 
@@ -266,8 +266,11 @@ Tips:
 * Assignment 8
 
 Split the creation keeping in mind the infra and/or the users, Makefile to the mix
+
 Remote state
+
 *Good:* cleaner, modular than previous approach, make X helps
+
 *Bad:* please share your ideas !
 
 : Makefile, rakefile ?
