@@ -158,7 +158,7 @@ Just take a look
 
 .play scripts/delete.go
 
-* Assigment 2
+* Assignment 2
 
 One file to rule them all - main.tf
 
@@ -186,7 +186,7 @@ Worth mentioning:
 : For example, a developer working on a complex set of infrastructure changes might create a new temporary workspace in order to freely experiment with changes without affecting the default workspace.
 : Non-default workspaces are often related to feature branches in version control. The default workspace might correspond to the "master" or "trunk" branch, which describes the intended state of production infrastructure.
 
-* Assigment 4
+* Assignment 4
 
 Split same code across multiple environments
 
@@ -196,7 +196,7 @@ Bad: Repetition of code - only env var different
 
 : We will improve this code base using terraform workspace and map type variable, but before going that one let's have a look variables management a bit closer
 
-* Assigment 4.5
+* Assignment 4.5
 
 Let's take a look how variables management in terraform
 
@@ -216,7 +216,7 @@ Variables could be given as parameter, generally exported from somewhere else li
 
 : Interpolation syntax https://www.terraform.io/docs/configuration-0-11/interpolation.html
 
-* Assigment 5
+* Assignment 5
 
 tfvars to abstract out common code
 
@@ -226,7 +226,7 @@ Bad: same as previous case but now both dev and prod exactly the same
 
 : DRY principle was broken here
 
-* Assigment 6
+* Assignment 6
 
 local module
 
@@ -234,9 +234,9 @@ Good: works
 
 Bad: Infra and module tightly coupled
 
-* Assigment 6.5
+* Assignment 6.5
 
-*Preliminary* for Assigment 7
+*Preliminary* for Assignment 7
 
 remote module
 
@@ -247,7 +247,7 @@ Good: decoupling, versioning
 Bad: Long terraform commands to document (in *assigment7*)
 
 
-* Assigment 7
+* Assignment 7
 
 remote module
 
@@ -262,6 +262,15 @@ Tips:
 .link https://github.com/segmentio/terraform-docs terraform-docs
 
 : terraform-docs to generate - terraform-docs markdown <module-name>
+
+* Assignment 8
+
+Split the creation keeping in mind the infra and/or the users, Makefile to the mix
+Remote state
+*Good:* cleaner, modular than previous approach, make X helps
+*Bad:* please share your ideas !
+
+: Makefile, rakefile ?
 
 * Reference
 
