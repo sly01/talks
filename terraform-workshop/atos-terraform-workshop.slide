@@ -275,6 +275,11 @@ The Terraform language uses configuration files that are named with the .tf file
 - Lists of primitive types can be made with square brackets ([]), for example ["foo", "bar", "baz"].
 - Maps can be made with braces ({}) and colons (:), for example { "foo": "bar", "bar": "baz" }.
 
+: Tags was changed tags {} tags = {}
+: Interpolation was changed in terraform 0.12 as follow - format("la-terraform-%d", random_id.tf_bucket_id.dec)
+: format("%s-%d", var.project_name, random_id.tf_bucket_id.dec)
+: output -> value = var.project_name
+
 * Style Conventions
 
 - Indent two spaces for each nesting level.
@@ -299,6 +304,8 @@ The Terraform language uses configuration files that are named with the .tf file
  terraform plan
  terraform apply
  terraform destroy
+
+: it has own domain specific language DSL called HCL(HashiCorp configuration language). It is declarative programming not imperative. Imagine api scripts which has to be in order and sequence but here in terrrafrom dependency is processed by terraform. Here is the difference functional programming and classic programming.
 
 * Assignment 3
 
