@@ -41,6 +41,11 @@ We will do that
 
 Short answer - it is useful, battle tested and has a strong community
 
+: idempotency ? Idempotent scripts can be called multiple times and each time it’s called, it will have the same effects on the system. This means, a second call will exit with the same result and won’t have any side effects.
+: mkdir test vs mkdir -p test , rm test.txt vs rm -f test.txt, ln -s source target vs ln -sf source target 
+: if ! grep -qF "/mnt/dev" /etc/fstab; then echo "/dev/sda1 /mnt/dev ext4 defaults 0 0" | sudo tee -a /etc/fstab fi --- if ! grep -qF "ahmet" test.txt; then echo "ahmet added" > test.txt;fi -q means silent mode and -F enables fixed string mode
+: - command: /usr/bin/create-database.sh creates=/path/to/database , command execution Idempotent way ! 
+
 * Why manual infra creation is a bad idea?
 
 Manual -> Error prone
@@ -263,6 +268,7 @@ The Terraform language uses configuration files that are named with the .tf file
     }
   }
 
+: Only need to know 7 different elements(3 of them important) terraform(remote state, terra version, provider version), providers(region, provider version, credentials), resource, variable, data(Data sources allow data to be fetched or computed for use elsewhere in Terraform configuration), output, module
 * Syntax Reference
 
 - Single line comments start with #.
